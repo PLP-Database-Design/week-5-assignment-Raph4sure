@@ -1,0 +1,31 @@
+<table>
+    <thead>
+        <tr>
+            <th>Provider ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Provider Speciality</th>
+            <th>Email Address</th>
+            <th>Phone Number</th>
+            <th>Date Joined</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% results. forEach(row => {%>
+        <tr>
+            <td><%= row.provider_id %></td>
+            <td><%= row.first_name%></td>
+            <td><%= row.last_name%></td>
+            <td><%= row.provider_specialty %></td>
+            <td><%= row.email_address %></td>
+            <td><%= row.phone_number %></td>
+            <td>
+                <%= new Date(row.date_joined).toLocaleDateString('en-CA') %>
+            </td>
+
+            <td><%= row.gender %></td>
+            <td><%= row.language %></td>
+        </tr>
+        <% }) %>
+    </tbody>
+</table>
